@@ -1,2 +1,10 @@
 # cse-341-project1
-this repo contains cse341 assignments
+
+This repo contains CSE 341 assignments.
+
+## Run
+
+```bash
+npm install
+npm start
+```

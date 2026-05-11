@@ -1,0 +1,17 @@
+{
+  "name": "cse-341-project1",
+  "version": "1.0.0",
+  "description": "CSE 341 project scaffold",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.22.1"
+  }
+}
