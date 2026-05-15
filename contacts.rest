@@ -1,0 +1,62 @@
+### Contacts API Testing
+
+# Development URL
+@baseUrl = http://localhost:3000
+# Production URL
+# @baseUrl = https://cse-341-project1-okdp.onrender.com
+
+### Get all contacts
+GET {{baseUrl}}/contacts
+
+### Get single contact by ID (replace with actual ID from get all)
+GET {{baseUrl}}/contacts/65d7a8c1f1c2d3e4f5g6h7i8
+
+### Create a new contact
+POST {{baseUrl}}/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane@example.com",
+  "favoriteColor": "Blue",
+  "birthday": "1990-05-15"
+}
+
+### Create another contact for testing
+POST {{baseUrl}}/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Robert",
+  "lastName": "Brown",
+  "email": "robert@example.com",
+  "favoriteColor": "Green",
+  "birthday": "1985-12-20"
+}
+
+### Update a contact (replace ID with actual contact ID)
+PUT {{baseUrl}}/contacts/65d7a8c1f1c2d3e4f5g6h7i8
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "favoriteColor": "Purple",
+  "birthday": "1990-05-15"
+}
+
+### Partial update - change only favorite color
+PUT {{baseUrl}}/contacts/65d7a8c1f1c2d3e4f5g6h7i8
+Content-Type: application/json
+
+{
+  "favoriteColor": "Red"
+}
+
+### Delete a contact (replace ID with actual contact ID)
+DELETE {{baseUrl}}/contacts/65d7a8c1f1c2d3e4f5g6h7i8
+
+### Get all contacts (verify deletion)
+GET {{baseUrl}}/contacts

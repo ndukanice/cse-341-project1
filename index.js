@@ -1,5 +1,7 @@
 require('dotenv').config();
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpecs = require('./swaggerConfig');
 const { connectToDatabase } = require('./db');
 
 const app = express();
@@ -10,6 +12,9 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
+
+// Setup Swagger documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 // mount contacts router
 const contactsRouter = require('./routes/contacts');
