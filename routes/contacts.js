@@ -85,8 +85,10 @@ router.get('/', async (req, res) => {
 // POST /contacts - create a new contact
 router.post('/', async (req, res) => {
   const { firstName, lastName, email, favoriteColor, birthday } = req.body;
-  if (!firstName || !lastName || !email) {
-    return res.status(400).json({ error: 'firstName, lastName and email are required' });
+  
+  // All fields are required
+  if (!firstName || !lastName || !email || !favoriteColor || !birthday) {
+    return res.status(400).json({ error: 'firstName, lastName, email, favoriteColor, and birthday are all required' });
   }
 
   const doc = { firstName, lastName, email, favoriteColor, birthday };
