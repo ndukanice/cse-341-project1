@@ -16,6 +16,12 @@ app.get('/', (req, res) => {
 // Setup Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
+// Serve raw swagger JSON at /swagger.json for direct access
+app.get('/swagger.json', (req, res) => {
+	res.setHeader('Content-Type', 'application/json');
+	res.send(swaggerSpecs);
+});
+
 // mount contacts router
 const contactsRouter = require('./routes/contacts');
 app.use('/contacts', contactsRouter);
